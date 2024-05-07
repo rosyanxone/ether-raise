@@ -1,12 +1,21 @@
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import CardDonation from "./components/CardDonation";
+import HomePage from "./pages/HomePage";
+import FundDetail from "./pages/FundDetail";
 
 function App() {
   return (
-    <>
-      <Navbar />
-      <CardDonation />
-    </>
+    <BrowserRouter>
+      <header>
+        <Navbar />
+      </header>
+      <main>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/detail" element={<FundDetail />} />
+        </Routes>
+      </main>
+    </BrowserRouter>
   );
 }
 
