@@ -4,8 +4,8 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <section>
-      <nav className="p-4 sm:p-6">
+    <section className="flex items-center justify-center">
+      <nav className="w-full max-w-primary p-4 sm:p-6">
         <div className="flex justify-between">
           <button
             className="relative inline-flex items-center justify-center rounded-md p-3 text-gray-400 ring-1 ring-gray-400 hover:bg-gray-100 hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset active:ring-white sm:hidden"
@@ -69,7 +69,7 @@ export default function Navbar() {
               </li>
             </ul>
           </div>
-          <div className="flex items-center rounded-md bg-primary p-3">
+          <div className="flex items-center rounded-md bg-primary p-2 sm:p-4">
             <a
               href="#"
               className="text-button lexend-deca text-balance text-center text-white"

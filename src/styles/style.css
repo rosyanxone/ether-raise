@@ -14,11 +14,35 @@
     font-family: "Lexend Deca", sans;
     font-optical-sizing: auto;
   }
+
+  .max-w-primary {
+    @apply max-w-[1128px];
+  }
 }
 
 @layer components {
   .text-body-medium {
     @apply text-base font-medium;
+  }
+
+  .text-body-regular {
+    @apply text-base font-normal;
+  }
+
+  .text-body-semi {
+    @apply text-base font-semibold;
+  }
+
+  .text-h5-semi {
+    @apply text-xl font-semibold;
+  }
+
+  .text-caption-regular {
+    @apply text-sm font-normal;
+  }
+
+  .text-caption-medium {
+    @apply text-sm font-medium;
   }
 
   .text-button {
