@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 export default function CardFund() {
   return (
-    <section className="flex justify-center items-center">
-      <div className="max-w-primary gap-6 p-4 sm:grid grid-cols-3 flex-col flex sm:p-6">
+    <section className="flex items-center justify-center">
+      <div className="max-w-primary m-4 flex grid-cols-3 flex-col gap-6 sm:m-6 sm:grid">
         <div className="rounded-2xl border border-light-300 bg-light-200 sm:max-w-[360px]">
           <div className="relative overflow-hidden rounded-2xl">
             <span className="absolute m-4 rounded-lg border border-light-300 bg-black bg-opacity-20 px-4 py-2 text-light-300">
@@ -17,7 +17,7 @@ export default function CardFund() {
           </div>
           <div className="flex flex-col gap-8 px-4 py-6">
             <div className="flex flex-col gap-5">
-              <h5 className="text-h5-semi text-ashes-100 line-clamp-1">
+              <h5 className="text-h5-semi line-clamp-1 text-ashes-100">
                 Support the Launch of Our Cutton Headphone
               </h5>
               <p className="text-body-regular text-ashes-200">
@@ -44,7 +44,10 @@ export default function CardFund() {
               </div>
             </div>
             <div className="pt-2 text-center">
-              <Link to={"/detail"} className="text-button lexend-deca text-primary">
+              <Link
+                to={"/detail"}
+                className="text-button lexend-deca text-primary"
+              >
                 Donasi
               </Link>
             </div>
@@ -63,7 +66,7 @@ export default function CardFund() {
           </div>
           <div className="flex flex-col gap-8 px-4 py-6">
             <div className="flex flex-col gap-5">
-              <h5 className="text-h5-semi text-ashes-100 line-clamp-1">
+              <h5 className="text-h5-semi line-clamp-1 text-ashes-100">
                 Support the Launch of Our Cutton Headphone
               </h5>
               <p className="text-body-regular text-ashes-200">
@@ -90,7 +93,10 @@ export default function CardFund() {
               </div>
             </div>
             <div className="pt-2 text-center">
-              <Link to={"/detail"} className="text-button lexend-deca text-primary">
+              <Link
+                to={"/detail"}
+                className="text-button lexend-deca text-primary"
+              >
                 Donasi
               </Link>
             </div>
@@ -109,7 +115,7 @@ export default function CardFund() {
           </div>
           <div className="flex flex-col gap-8 px-4 py-6">
             <div className="flex flex-col gap-5">
-              <h5 className="text-h5-semi text-ashes-100 line-clamp-1">
+              <h5 className="text-h5-semi line-clamp-1 text-ashes-100">
                 Support the Launch of Our Cutton Headphone
               </h5>
               <p className="text-body-regular text-ashes-200">
@@ -136,7 +142,10 @@ export default function CardFund() {
               </div>
             </div>
             <div className="pt-2 text-center">
-              <Link to={"/detail"} className="text-button lexend-deca text-primary">
+              <Link
+                to={"/detail"}
+                className="text-button lexend-deca text-primary"
+              >
                 Donasi
               </Link>
             </div>
@@ -155,7 +164,7 @@ export default function CardFund() {
           </div>
           <div className="flex flex-col gap-8 px-4 py-6">
             <div className="flex flex-col gap-5">
-              <h5 className="text-h5-semi text-ashes-100 line-clamp-1">
+              <h5 className="text-h5-semi line-clamp-1 text-ashes-100">
                 Support the Launch of Our Cutton Headphone
               </h5>
               <p className="text-body-regular text-ashes-200">
@@ -182,7 +191,10 @@ export default function CardFund() {
               </div>
             </div>
             <div className="pt-2 text-center">
-              <Link to={"/detail"} className="text-button lexend-deca text-primary">
+              <Link
+                to={"/detail"}
+                className="text-button lexend-deca text-primary"
+              >
                 Donasi
               </Link>
             </div>

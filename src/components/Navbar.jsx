@@ -1,11 +1,12 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <section className="flex items-center justify-center">
-      <nav className="w-full max-w-primary p-4 sm:p-6">
+      <nav className="max-w-primary m-4 w-full sm:m-6">
         <div className="flex justify-between">
           <button
             className="relative inline-flex items-center justify-center rounded-md p-3 text-gray-400 ring-1 ring-gray-400 hover:bg-gray-100 hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset active:ring-white sm:hidden"
@@ -48,14 +49,17 @@ export default function Navbar() {
             )}
           </button>
           <div className="flex items-center justify-between sm:w-[40%]">
-            <a href="#" className="text-2xl font-semibold text-primary sm:mr-5">
+            <Link
+              to={"/"}
+              className="text-2xl font-semibold text-primary sm:mr-5"
+            >
               EtherRaise
-            </a>
+            </Link>
             <ul className="hidden items-center gap-5 text-nowrap sm:flex">
               <li>
-                <a href="#" className="text-body-medium text-dark">
+                <Link to={"/create"} className="text-body-medium text-dark">
                   Galang Dana
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="#" className="text-body-medium text-dark">
