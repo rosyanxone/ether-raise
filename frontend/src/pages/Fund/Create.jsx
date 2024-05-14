@@ -29,6 +29,15 @@ export default function Create() {
               id="target"
             />
           </div>
+          <div className="flex w-full flex-col">
+            <label htmlFor="deadline">Tenggat Donasi</label>
+            <input
+              className="border border-ashes-100 bg-slate-100"
+              type="date"
+              name="deadline"
+              id="deadline"
+            />
+          </div>
           <button
             type="submit"
             className="rounded-lg bg-primary px-8 py-4 font-bold text-white"

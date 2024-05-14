@@ -1,18 +1,56 @@
+import { useParams } from "react-router-dom";
+import { useStateContext } from "../../context";
+import { useEffect, useState } from "react";
+
 export default function Detail() {
+  const { slug } = useParams();
+  const { getCampaigns, getDonations, contract, address } = useStateContext();
+
+  const [campaign, setCampaign] = useState(null);
+  const [donators, setDonators] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    if (contract) {
+      getCampaigns().then((campaigns) => {
+        const data = campaigns.find((campaign) => campaign.slug === slug);
+
+        setCampaign(data);
+        setIsLoading(false);
+
+        getDonations(1).then((data) => {
+          setDonators(data);
+        });
+      });
+    }
+  }, [address, contract]);
+
   return (
     <div className="flex justify-center">
       <div className="max-w-primary m-4 w-full sm:m-6">
         <ul className="list-inside list-disc">
-          <li>Judul: Donasi Kwek wek</li>
-          <li>Terkumpul: 7000</li>
-          <li>Target: 10000</li>
-          <li>Progress: 70%</li>
+          {isLoading ? (
+            <p>Loading...</p>
+          ) : (
+            <>
+              <li>Judul: {campaign.title}</li>
+              <li>Deskripsi: {campaign.description}</li>
+              <li>Terkumpul: {campaign.amountCollected}</li>
+              <li>Target: {campaign.target}</li>
+              <li>Progress: 70%</li>
+            </>
+          )}
         </ul>
         <div className="mt-4">Donatur:</div>
         <ol className="list-inside list-decimal">
-          <li>Sariffudin, 0x22xxxx, 26/11/24, 20ETH</li>
-          <li>Asep, 0x33xxxx, 25/11/24, 11ETH</li>
-          <li>Jokoting, 0x23xxxx, 02/10/24, 73ETH</li>
+          {donators &&
+            donators.map((donator) => {
+              return (
+                <li key={donator.id}>
+                  {donator.donator}, 26/11/24, {donator.donation}ETH
+                </li>
+              );
+            })}
         </ol>
       </div>
     </div>

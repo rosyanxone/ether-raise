@@ -1,9 +1,20 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import { ThirdwebProvider } from "@thirdweb-dev/react";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+import { StateContextProvider } from "./context/index.jsx";
+import App from "./App.jsx";
+
+const apiKey = import.meta.env.VITE_API_KEY;
+const chainId = import.meta.env.VITE_CHAIN_ID;
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <ThirdwebProvider activeChain={parseInt(chainId)} clientId={apiKey}>
+    <BrowserRouter>
+      <StateContextProvider>
+        <App />
+      </StateContextProvider>
+    </BrowserRouter>
+  </ThirdwebProvider>,
+);

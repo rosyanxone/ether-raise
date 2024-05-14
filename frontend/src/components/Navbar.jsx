@@ -1,8 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { metamaskWallet } from "@thirdweb-dev/react";
+
+import { useStateContext } from "../context";
 
 export default function Navbar() {
+  const metamaskConfig = metamaskWallet();
+
+  const { connect, disconnect, address } = useStateContext();
+
   const [isOpen, setIsOpen] = useState(false);
+  const [isAddress, setIsAddress] = useState(address);
+
+  useEffect(() => {
+    setIsAddress(address);
+  }, [address]);
 
   return (
     <section className="flex items-center justify-center">
@@ -74,12 +86,17 @@ export default function Navbar() {
             </ul>
           </div>
           <div className="flex items-center rounded-md bg-primary p-2 sm:p-4">
-            <a
-              href="#"
+            <button
+              type="button"
               className="text-button lexend-deca text-balance text-center text-white"
+              onClick={async () => {
+                if (!isAddress) await connect(metamaskConfig);
+                else disconnect();
+              }}
             >
-              Connect Wallet
-            </a>
+              {isAddress ? "Wallet Connected" : "Connect Wallet"}
+            </button>
+            {/* <ConnectButton client={clients} /> */}
           </div>
         </div>
 
